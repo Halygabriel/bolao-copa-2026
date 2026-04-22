@@ -838,7 +838,6 @@
     transition: background var(--transition), transform var(--transition);
   }
   
-  .ranking-table tbody tr:hover {
     background: rgba(255,255,255,0.03);
   }
   
@@ -1197,7 +1196,6 @@
       min-width: 640px;
     }
   }
-
   .with-flag {
     display: flex;
     align-items: center;
@@ -1346,4 +1344,21 @@
     width: 100%;
     min-width: 100%;
   }
+}
+
+/* Esconder o ícone de olho padrão do navegador no campo de senha */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  display: none !important;
+}
+
+/* Alguns navegadores modernos usam pseudo-elementos específicos para o ícone de visibilidade */
+input::-webkit-reveal,
+input::-webkit-clear-button {
+  display: none;
 }
